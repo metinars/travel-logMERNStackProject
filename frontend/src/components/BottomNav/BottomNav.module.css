@@ -1,0 +1,72 @@
+.bottomNav {
+    background-color: #fff;
+    color: rgba(0, 0, 0, 0.87);
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    box-shadow: 0px 3px 3px -2px rgba(0,0,0,0.2), 0px 3px 4px 0px rgba(0,0,0,0.14), 0px 1px 8px 0px rgba(0,0,0,0.12);
+    border-radius: 4px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+
+.navItems {
+    display: flex;
+    justify-content: center;
+    height: 56px;
+    background-color: #fff;
+}
+
+.navItems .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+    background-color: transparent;
+    outline: 0;
+    border: 0;
+    margin: 0;
+    border-radius: 0;
+    padding: 0;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    text-decoration: none;
+    color: inherit;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,padding-top 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    padding: 0px 12px;
+    min-width: 80px;
+    max-width: 168px;
+    color: rgba(0, 0, 0, 0.6);
+    flex-direction: column;
+    flex: 1;
+}
+
+.navItems button svg {
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    fill: currentColor;
+    flex-shrink: 0;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    font-size: 1.5rem;
+}
+
+.navItems button span {
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    font-size: 0.75rem;
+    opacity: 1;
+    transition: font-size 0.2s,opacity 0.2s;
+    transition-delay: 0.1s;
+}
+
+.navItems .button:hover {
+    color: #1876D1;
+}
+
+.navItems .button.active{
+    color: #1876D1;
+}

@@ -1,0 +1,62 @@
+.stepBtns {
+    display: flex;
+    flex-direction: row;
+    padding-top: 16px;
+    padding-bottom: 56px;
+    justify-content: space-around;
+}
+
+.stepBtns a{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+    background-color: transparent;
+    outline: 0;
+    border: 0;
+    margin: 0;
+    border-radius: 0;
+    padding: 0;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: 18px;
+    color: inherit;
+    font-weight: bold;
+    text-transform: uppercase;
+    min-width: 64px;
+    padding: 6px 8px;
+    border-radius: 4px;
+    color: #1976d2;
+}
+
+.stepBtns a:hover{
+    text-decoration: none;
+    background-color: rgba(25, 118, 210, 0.04);
+}
+
+.display {
+    display: none;
+}
+
+.containerLocation {
+    width:100%;
+    justify-content: center;
+}
+
+.containerMap {
+    display: flex;
+}
+
+.locationInput {
+    max-width: 100;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+}
+
+.locationInput label {
+    text-align: center;
+}

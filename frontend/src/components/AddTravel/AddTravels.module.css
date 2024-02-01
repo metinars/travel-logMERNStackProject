@@ -1,0 +1,102 @@
+/* -------------------------------------------------------------------------- */
+.container {
+    margin: 3rem auto;
+    max-width: 60rem;
+}
+
+.addTravel {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+}
+
+.formItems {
+    overflow-y: auto;
+    align-items: center;
+    padding: 16px 24px;
+    align-items: center;
+}
+
+.formItems label,
+.formItems input,
+.formItems textarea {
+    border-color: black;
+    display: block;
+    width: 100%;
+}
+
+.formItems input,
+.formItems textarea {
+    font: inherit;
+    padding: 0.25rem;
+}
+
+.submitAction {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-right: 0.9rem;
+    max-width: 48rem;
+}
+
+.submitAction button {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    background-color: #0f61ef;
+    color: #fff;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.submitAction button:hover {
+    background-color: #0f3cef;
+}
+
+.stepBtns {
+    display: flex;
+    flex-direction: row;
+    padding-top: 16px;
+    padding-bottom: 56px;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.stepBtns button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+    background-color: transparent;
+    outline: 0;
+    border: 0;
+    margin: 0;
+    border-radius: 0;
+    padding: 0;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: 18px;
+    color: inherit;
+    font-weight: bold;
+    text-transform: uppercase;
+    min-width: 64px;
+    padding: 6px 8px;
+    border-radius: 4px;
+    color: #1976d2;
+}
+
+.stepBtns button:hover {
+    text-decoration: none;
+    background-color: rgba(25, 118, 210, 0.04);
+}
+
+button:disabled,
+button[disabled] {
+    cursor: not-allowed;
+    background-color: transparent;
+    color: #666666;
+}
