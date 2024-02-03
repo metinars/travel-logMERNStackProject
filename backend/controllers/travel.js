@@ -10,4 +10,9 @@ const createTravel = tryCatch(async (req, res) => {
   }, 1000);
 });
 
-module.exports = createTravel;
+const getTravels = tryCatch(async (req, res) => {
+  const travels = await Travel.find().sort({ _id: -1 });
+  res.status(200).json({ success: true, result: travels });
+});
+
+module.exports = { createTravel, getTravels };

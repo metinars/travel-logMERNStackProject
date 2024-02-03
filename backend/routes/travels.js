@@ -1,8 +1,9 @@
 const router = require('express').Router();
 
-const createTravel = require('../controllers/travel');
+const { createTravel, getTravels } = require('../controllers/travel');
 const auth = require('../middleware/auth');
 
-router.post('/', auth, createTravel);
+router.post('/new', auth, createTravel);
+router.get('/getAll', getTravels);
 
 module.exports = router;

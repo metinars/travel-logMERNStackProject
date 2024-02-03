@@ -6,7 +6,7 @@ import AddLocation from './AddLocation/AddLocation';
 import AddDetails from './AddDetails/AddDetails';
 import { useState } from 'react';
 import { useValue } from '../../context/ContextProvider';
-import { createNewTravel, queryClient } from '../../httpUtil/http';
+import { createNewTravel, queryClient } from '../../util/http';
 import ErrorBlock from '../UI/ErrorBlock';
 
 const AddTravel = () => {
@@ -39,7 +39,7 @@ const AddTravel = () => {
   const { mutate, isPending, isError, error } = useMutation({
     mutationFn: createNewTravel,
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['travel'] });
+      queryClient.invalidateQueries({ queryKey: ['new-travel'] });
       navigate('/travels');
     },
   });

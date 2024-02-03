@@ -6,7 +6,9 @@ import MapPage from './pages/Map';
 import TravelsPage from './pages/Travels';
 import ErrorPage from './pages/Error';
 import NewTravelsRootPage from './pages/NewTravel/NewTravelsRoot';
-import { queryClient } from './httpUtil/http';
+import { queryClient } from './util/http';
+import { checkAuthLoader } from './util/auth';
+import ProtectedPage from './pages/Protected';
 // import AddLocationPage from './pages/NewTravel/AddLocation';
 // import AddDetailsPage from './pages/NewTravel/AddDetails';
 // import AddImagesPage from './pages/NewTravel/AddImages';
@@ -26,6 +28,7 @@ const router = createBrowserRouter([
       {
         path: 'add',
         element: <NewTravelsRootPage />,
+        loader: checkAuthLoader,
         // action: manipulateEventAction,
         // children: [
         //   {
@@ -41,6 +44,10 @@ const router = createBrowserRouter([
         //   element: <AddImagesPage />,
         // },
         // ],
+      },
+      {
+        path: 'no-entry',
+        element: <ProtectedPage />,
       },
     ],
   },

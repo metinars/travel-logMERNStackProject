@@ -7,7 +7,6 @@ import { useValue } from '../context/ContextProvider';
 function HomePage() {
   const {
     state: { openLogin },
-    dispatch,
   } = useValue();
   return (
     <>
