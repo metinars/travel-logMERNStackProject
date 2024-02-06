@@ -3,13 +3,12 @@ import { Await, defer, json, useRouteLoaderData } from 'react-router-dom';
 import TravelDetails from '../components/Travels/TravelDetail';
 
 function TravelDetailPage() {
-  console.log(travel, '7');
   const { travel } = useRouteLoaderData('travel-detail');
+
   return (
     <Suspense fallback={<p style={{ textAlign: 'center' }}>Loading...</p>}>
       <Await resolve={travel}>
         {(loadedTravel) => <TravelDetails travel={loadedTravel} />}
-        console.log(travel);
       </Await>
     </Suspense>
   );
@@ -30,7 +29,7 @@ async function loadTravel(id) {
     );
   } else {
     const resData = await response.json();
-    console.log(resData);
+
     return resData;
   }
 }
@@ -39,10 +38,9 @@ async function loadTravel(id) {
 export async function loader({ request, params }) {
   const id = params.travelId;
 
-  console.log('girdi');
-  console.log(id);
+  const data = await loadTravel(id);
 
-  return defer(console.log('defer girdi'), {
-    travel: await loadTravel(id),
+  return defer({
+    travel: data.result,
   });
 }

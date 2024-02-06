@@ -1,0 +1,77 @@
+.travel__details header {
+    width: 50rem;
+    margin: auto;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.travel__details header nav {
+    display: flex;
+    gap: 1rem;
+}
+
+.travel__details header button,
+.travel__details header a {
+    font: inherit;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0.25rem;
+}
+
+.travel__details__image{
+    max-width: 40rem;
+    height: 20rem;
+    margin: 1rem auto;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.travel__details__image img {
+    width: 40rem;
+    max-height: 20rem;
+    object-fit: scale-down;
+}
+.travel__details__content img {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+    margin-bottom: 2rem;
+}
+
+.travel__details__content {
+    width: 50rem;
+    margin: auto;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.travel__details__info p{
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+.travel__details time {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+.travel__details__location {
+    font-size: 1.15rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.travel__details__description {
+    font-size: 1.25rem;
+    line-height: 2rem;
+    text-align: center;
+    margin-bottom: 5rem;
+}
