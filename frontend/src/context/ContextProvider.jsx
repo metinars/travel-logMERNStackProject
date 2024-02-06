@@ -4,8 +4,6 @@ import reducer from './reducer';
 const initialState = {
   currentUser: null,
   openLogin: false,
-  loading: false,
-  alert: { open: false, severity: 'info', message: '' },
   images: [],
   travelDetails: { title: '', description: '' },
   location: { lng: 0, lat: 0 },

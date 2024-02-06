@@ -15,4 +15,23 @@ const getTravels = tryCatch(async (req, res) => {
   res.status(200).json({ success: true, result: travels });
 });
 
-module.exports = { createTravel, getTravels };
+const getTravelDetail = tryCatch(async (req, res) => {
+  const { id } = req.params;
+  const travel = await Travel.findById(id);
+  res.status(200).json({ success: true, result: travel });
+});
+
+// const getTravelDetail = async (req, res, next) => {
+//   try {
+//     console.log('test');
+//     const { id } = req.params;
+//     const travel = await Travel.findById(id);
+//     res.status(200).json({
+//       travel,
+//     });
+//   } catch (error) {
+//     return res.status(500).json({ message: error.message });
+//   }
+// };
+
+module.exports = { createTravel, getTravels, getTravelDetail };

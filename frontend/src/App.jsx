@@ -9,10 +9,10 @@ import NewTravelsRootPage from './pages/NewTravel/NewTravelsRoot';
 import { queryClient } from './util/http';
 import { checkAuthLoader } from './util/auth';
 import ProtectedPage from './pages/Protected';
-// import AddLocationPage from './pages/NewTravel/AddLocation';
-// import AddDetailsPage from './pages/NewTravel/AddDetails';
-// import AddImagesPage from './pages/NewTravel/AddImages';
-// import { action as manipulateEventAction } from './components/AddTravel/AddTravel';
+import TravelsRootLayout from './pages/TravelRoot';
+import TravelDetailPage, {
+  loader as travelDetailLoader,
+} from './pages/TravelDetail';
 
 const router = createBrowserRouter([
   {
@@ -23,27 +23,29 @@ const router = createBrowserRouter([
       { index: true, element: <MapPage /> },
       {
         path: 'travels',
-        element: <TravelsPage />,
+        element: <TravelsRootLayout />,
+        children: [
+          {
+            index: true,
+            element: <TravelsPage />,
+          },
+          {
+            path: ':travelId',
+            id: 'travel-detail',
+            loader: travelDetailLoader,
+            children: [
+              {
+                index: true,
+                element: <TravelDetailPage />,
+              },
+            ],
+          },
+        ],
       },
       {
         path: 'add',
         element: <NewTravelsRootPage />,
         loader: checkAuthLoader,
-        // action: manipulateEventAction,
-        // children: [
-        //   {
-        //     index: true,
-        //     element: <AddLocationPage />,
-        //   },
-        // {
-        //   path: 'detail',
-        //   element: <AddDetailsPage />,
-        // },
-        // {
-        //   path: 'image',
-        //   element: <AddImagesPage />,
-        // },
-        // ],
       },
       {
         path: 'no-entry',
