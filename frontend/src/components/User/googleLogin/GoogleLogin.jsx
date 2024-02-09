@@ -4,21 +4,19 @@ import { motion } from 'framer-motion';
 import { jwtDecode } from 'jwt-decode';
 
 import classes from './GoogleLogin.module.css';
-import { useValue } from '../../../context/ContextProvider';
 
 const GoogleLogin = () => {
-  const { dispatch } = useValue();
   const [disabled, setDisabled] = useState(false);
 
   const handleResponse = (response) => {
     const token = response.credential;
     const decodedToken = jwtDecode(token);
     const { sub: id, email, name } = decodedToken;
-    dispatch({
-      type: 'UPDATE_USER',
-      payload: { id, email, name, token, google: true },
-    });
-    dispatch({ type: 'CLOSE_LOGIN' });
+    localStorage.setItem(
+      'currentUser',
+      JSON.stringify({ id, email, name, token, google: true })
+    );
+    localStorage.setItem('currentUserToken', JSON.stringify(token));
   };
 
   const handleGoogleLogin = () => {
@@ -41,10 +39,6 @@ const GoogleLogin = () => {
         }
       });
     } catch (error) {
-      dispatch({
-        type: 'UPDATE_ALERT',
-        payload: { open: true, severity: 'error', message: error.message },
-      });
       console.log(error);
     }
   };

@@ -2,6 +2,7 @@ const fetchData = async (
   { url, method = 'POST', token = '', body = null },
   dispatch
 ) => {
+  console.log(token);
   const headers = token
     ? { 'Content-Type': 'application/json', authorization: `Bearer ${token}` }
     : { 'Content-Type': 'application/json' };

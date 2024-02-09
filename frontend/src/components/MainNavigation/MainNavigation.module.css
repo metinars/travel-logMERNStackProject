@@ -37,6 +37,26 @@
   text-decoration: none;
 }
 
+.cta a {
+  color: #fff;
+  font-size: 1.1rem;
+  padding: 9px 25px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  flex-direction: row;
+  text-decoration: none;
+}
+
+.cta a:hover {
+  background-color: rgba(0, 0, 0, 0.14);
+  border-radius: 50px;
+}
+
+.cta a svg {
+  padding-left: 5px;
+}
+
 .cta button {
   color: #fff;
   font-size: 1.1rem;
@@ -45,6 +65,7 @@
   background-color: transparent;
   cursor: pointer;
   flex-direction: row;
+  text-decoration: none;
 }
 
 .cta button:hover {

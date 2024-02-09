@@ -8,19 +8,25 @@ import ErrorPage from './pages/Error';
 import NewTravelsRootPage from './pages/NewTravel/NewTravelsRoot';
 import { queryClient } from './util/http';
 import { checkAuthLoader } from './util/auth';
-import ProtectedPage from './pages/Protected';
 import TravelsRootLayout from './pages/TravelRoot';
 import TravelDetailPage, {
   loader as travelDetailLoader,
 } from './pages/TravelDetail';
+import AuthenticationPage, {
+  action as authAction,
+} from './pages/Authentication';
+import { action as actionLogout } from './pages/Logout';
+import { tokenLoader } from './util/auth';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <RootLayout />,
     errorElement: <ErrorPage />,
+    loader: tokenLoader,
     children: [
       { index: true, element: <MapPage /> },
+      { path: 'auth', element: <AuthenticationPage />, action: authAction },
       {
         path: 'travels',
         element: <TravelsRootLayout />,
@@ -48,8 +54,8 @@ const router = createBrowserRouter([
         loader: checkAuthLoader,
       },
       {
-        path: 'no-entry',
-        element: <ProtectedPage />,
+        path: 'logout',
+        action: actionLogout,
       },
     ],
   },

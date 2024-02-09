@@ -4,6 +4,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import { format } from 'timeago.js';
 
 import classes from './ClusterMap.module.css';
+import { Link } from 'react-router-dom';
 
 // eslint-disable-next-line react/prop-types
 function ClusterMap({ travels }) {
@@ -131,6 +132,9 @@ function ClusterMap({ travels }) {
                     <span className="date">
                       {format(cluster.properties.createdAt)}
                     </span>
+                    <Link to={`travels/${cluster.properties.travelId}`}>
+                      See More
+                    </Link>
                   </div>
                 </Popup>
               )}

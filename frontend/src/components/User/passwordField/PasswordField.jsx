@@ -3,11 +3,7 @@ import { LiaEyeSlash, LiaEyeSolid } from 'react-icons/lia';
 
 import classes from './PasswordField.module.css';
 
-const PasswordField = ({
-  passwordRef,
-  id = 'password',
-  label = 'Password',
-}) => {
+const PasswordField = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const passwordVisibleHandler = () => {
@@ -15,13 +11,12 @@ const PasswordField = ({
   };
   return (
     <div>
-      <label htmlFor={label}>{label}</label>
+      <label htmlFor="password">Password</label>
       <div className={classes['input-icons']}>
         <input
-          ref={passwordRef}
           type={showPassword ? 'text' : 'password'}
-          name={label}
-          id={id}
+          name="password"
+          id="password"
           className={classes['input-field']}
         />
         <div className={classes['password-icon']}>

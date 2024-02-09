@@ -2,6 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const app = express();
+const cors = require('cors');
+const bodyParser = require('body-parser');
 const userRoute = require('./routes/users');
 const pinRoute = require('./routes/travels');
 const users = require('./routes/users');
@@ -26,7 +28,9 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/user', users);
+app.use(bodyParser.json());
+app.use(cors());
+app.use(users);
 app.use('/travel', travels);
 app.get('/', (req, res) => res.json({ message: 'Welcome to our API' }));
 app.use((req, res) =>

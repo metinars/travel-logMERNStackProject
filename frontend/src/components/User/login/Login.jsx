@@ -102,7 +102,7 @@ const Login = () => {
             />
           )}
         </div>
-        <div className={classes['login-actions']}>
+        <div className={classes.login__actions}>
           <button type="button" onClick={handleClose}>
             Cancel
           </button>

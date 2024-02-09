@@ -1,17 +1,9 @@
-import { AnimatePresence } from 'framer-motion';
-import { NavLink } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { Form, NavLink } from 'react-router-dom';
 
 import classes from './MainNavigation.module.css';
-import { useValue } from '../../context/ContextProvider';
-import NavBarUserLoginHover from '../User/NavBarUserLoginHover';
-import Login from '../user/Login';
 
 function MainNavigation() {
-  const {
-    state: { currentUser, openLogin },
-    dispatch,
-  } = useValue();
+  const token = localStorage.getItem('currentUserToken');
 
   return (
     <>
@@ -33,26 +25,23 @@ function MainNavigation() {
         </ul>
       </nav> */}
         <div className={classes.cta}>
-          {!currentUser ? (
-            <motion.button
-              whileHover={{ scale: 1.2 }}
-              whileTap={{ scale: 0.8 }}
-              onClick={() => dispatch({ type: 'OPEN_LOGIN' })}
+          {!token && (
+            <NavLink
+              to="/auth?mode=login"
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
             >
               Login
-            </motion.button>
-          ) : (
-            <NavBarUserLoginHover />
+            </NavLink>
+          )}
+          {token && (
+            <Form action="/logout" method="post">
+              <button>Logout</button>
+            </Form>
           )}
         </div>
       </header>
-      {openLogin ? (
-        <AnimatePresence>
-          <Login />
-        </AnimatePresence>
-      ) : (
-        ''
-      )}
     </>
   );
 }

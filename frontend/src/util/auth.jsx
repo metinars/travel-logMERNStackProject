@@ -12,8 +12,8 @@ export function tokenLoader() {
 export function checkAuthLoader() {
   const token = getAuthToken();
 
-  if (token === 'undefined') {
-    return redirect('/no-entry');
+  if (!token) {
+    return redirect('/auth');
   }
 
   return null;
