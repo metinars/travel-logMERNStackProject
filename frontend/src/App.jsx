@@ -11,12 +11,15 @@ import { checkAuthLoader } from './util/auth';
 import TravelsRootLayout from './pages/TravelRoot';
 import TravelDetailPage, {
   loader as travelDetailLoader,
+  action as deleteTravelAction,
 } from './pages/TravelDetail';
 import AuthenticationPage, {
   action as authAction,
 } from './pages/Authentication';
 import { action as actionLogout } from './pages/Logout';
 import { tokenLoader } from './util/auth';
+import EditTravelPage from './pages/Edittravel';
+import { action as manipulateTravelAction } from './components/EditTravel/EditTravel';
 
 const router = createBrowserRouter([
   {
@@ -43,6 +46,13 @@ const router = createBrowserRouter([
               {
                 index: true,
                 element: <TravelDetailPage />,
+                action: deleteTravelAction,
+              },
+              {
+                path: 'edit',
+                element: <EditTravelPage />,
+                action: manipulateTravelAction,
+                loader: checkAuthLoader,
               },
             ],
           },

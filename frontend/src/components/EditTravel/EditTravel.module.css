@@ -1,0 +1,30 @@
+.edit__travel{
+    margin: 20% auto;
+    max-width: 30rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.submitAction {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+   
+}
+
+.submitAction button {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    background-color: #0f61ef;
+    color: #fff;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.submitAction button:hover {
+    background-color: #0f3cef;
+}

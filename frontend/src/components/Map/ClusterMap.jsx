@@ -116,25 +116,28 @@ function ClusterMap({ travels }) {
                   anchor="left"
                 >
                   <div className={classes.card}>
-                    <span>
-                      <p className={classes.label}>Title</p>
-                      <p className={classes.place}>
-                        {cluster.properties.title}
-                      </p>
-                    </span>
-                    <span>
-                      <p className={classes.label}>Description</p>
-                      <p className={classes.desc}>{cluster.properties.desc}</p>
-                    </span>
-                    <span className={classes.username}>
-                      Created by <b>{cluster.properties.uName}</b>
-                    </span>
-                    <span className="date">
-                      {format(cluster.properties.createdAt)}
-                    </span>
-                    <Link to={`travels/${cluster.properties.travelId}`}>
-                      See More
-                    </Link>
+                    <img
+                      src={cluster.properties.photoUrl}
+                      className={classes.avatar}
+                      alt={cluster.properties.title}
+                      // style="width:100%"
+                    />
+                    <h2> {cluster.properties.title}</h2>
+                    {/* <p className={classes.title}>CEO & Founder, Example</p> */}
+                    {/* <p>{cluster.properties.desc}</p> */}
+                    <div className={classes.other__info}>
+                      <span className={classes.username}>
+                        Created by <b>{cluster.properties.uName}</b>
+                      </span>
+                      <span className="date">
+                        {format(cluster.properties.createdAt)}
+                      </span>
+                    </div>
+                    <div className={classes.button}>
+                      <Link to={`travels/${cluster.properties.travelId}`}>
+                        See More
+                      </Link>
+                    </div>
                   </div>
                 </Popup>
               )}

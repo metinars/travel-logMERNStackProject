@@ -12,35 +12,6 @@
   align-items: center;
 }
 
-
-.card {
-  width: 250px;
-  height: auto;
-  max-height: 250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
-.label {
-  width: max-content;
-  color: tomato;
-  font-size: 13px;
-  border-bottom: 0.5px solid tomato;
-}
-
-.desc {
-  font-size: 14px;
-}
-
-.username {
-  font-size: 14px;
-}
-
-.date {
-  font-size: 12px;
-}
-
 .avatar {
   vertical-align: middle;
   width: 40px;
@@ -48,6 +19,37 @@
   border-radius: 50%;
 }
 
-.div {
-padding: 0px;
+.card {
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+.other__info{
+  display: flex;
+  justify-content:space-around
+}
+
+.other__info span{
+  font-size: 10px;
+}
+
+.card .button {
+  margin-top: 1rem;
+}
+
+.card a {
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+}
+
+.card a:hover {
+  opacity: 0.7;
 }

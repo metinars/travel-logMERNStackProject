@@ -21,6 +21,34 @@ const getTravelDetail = tryCatch(async (req, res) => {
   res.status(200).json({ success: true, result: travel });
 });
 
+const deleteTravel = tryCatch(async (req, res) => {
+  try {
+    const { id } = req.params;
+    console.log(id);
+    await Travel.findByIdAndDelete(id);
+    res.status(200).json({
+      message: `Deleting success! ${id}`,
+    });
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+});
+
+const editTravel = tryCatch(async (req, res) => {
+  try {
+    const data = req.body;
+    console.log(data);
+    const { id } = req.params;
+    console.log(id);
+    await Travel.findByIdAndUpdate(id, data);
+    res.status(200).json({
+      message: 'Editing Success',
+    });
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+});
+
 // const getTravelDetail = async (req, res, next) => {
 //   try {
 //     console.log('test');
@@ -34,4 +62,10 @@ const getTravelDetail = tryCatch(async (req, res) => {
 //   }
 // };
 
-module.exports = { createTravel, getTravels, getTravelDetail };
+module.exports = {
+  createTravel,
+  getTravels,
+  getTravelDetail,
+  deleteTravel,
+  editTravel,
+};

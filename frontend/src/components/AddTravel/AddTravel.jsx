@@ -5,16 +5,11 @@ import classes from './AddTravels.module.css';
 import AddLocation from './AddLocation/AddLocation';
 import AddDetails from './AddDetails/AddDetails';
 import { useState } from 'react';
-import { useValue } from '../../context/ContextProvider';
 import { createNewTravel, queryClient } from '../../util/http';
 import ErrorBlock from '../UI/ErrorBlock';
 
 const AddTravel = () => {
   const [activeStep, setActiveStep] = useState(0);
-
-  const {
-    state: { currentUser },
-  } = useValue();
 
   const [steps] = useState([{ label: 'Location' }, { label: 'Details' }]);
 
@@ -47,7 +42,7 @@ const AddTravel = () => {
   const submitHandler = (event) => {
     event.preventDefault();
 
-    const token = currentUser?.token;
+    const token = localStorage.getItem('currentUserToken');
 
     const travelData = new FormData(event.target);
     const data = Object.fromEntries(travelData);

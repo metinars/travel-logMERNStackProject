@@ -3,7 +3,6 @@ import classes from './Travels.module.css';
 
 // eslint-disable-next-line react/prop-types
 const Travels = ({ travels }) => {
-  console.log(travels);
   return (
     <article className={classes.flow}>
       <div className={classes.team}>

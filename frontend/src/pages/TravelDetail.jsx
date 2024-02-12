@@ -1,6 +1,13 @@
 import { Suspense } from 'react';
-import { Await, defer, json, useRouteLoaderData } from 'react-router-dom';
+import {
+  Await,
+  defer,
+  json,
+  redirect,
+  useRouteLoaderData,
+} from 'react-router-dom';
 import TravelDetails from '../components/Travels/TravelDetail';
+import { getAuthToken } from '../util/auth';
 
 function TravelDetailPage() {
   const { travel } = useRouteLoaderData('travel-detail');
@@ -43,4 +50,29 @@ export async function loader({ request, params }) {
   return defer({
     travel: data.result,
   });
+}
+
+export async function action({ params, request }) {
+  const travelId = params.travelId;
+
+  const token = getAuthToken();
+  const response = await fetch(
+    import.meta.env.VITE_REACT_APP_SERVER_URL + `/travel/${travelId}`,
+    {
+      method: request.method,
+      headers: {
+        Authorization: 'Bearer ' + token,
+      },
+    }
+  );
+
+  if (!response.ok) {
+    throw json(
+      { message: 'Could not delete event.' },
+      {
+        status: 500,
+      }
+    );
+  }
+  return redirect('/travels');
 }

@@ -1,10 +1,9 @@
 .travel__details header {
-    width: 50rem;
-    margin: auto;
-    margin-top: 3rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    width: 40rem;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .travel__details header nav {
@@ -44,13 +43,12 @@
 }
 
 .travel__details__content {
-    width: 50rem;
-    margin: auto;
-    margin-top: 3rem;
+    width: 40rem;
+    margin:  auto;
+    border-radius: 8px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
 }
 
 .travel__details__info p{
@@ -70,8 +68,56 @@
 }
 
 .travel__details__description {
-    font-size: 1.25rem;
-    line-height: 2rem;
-    text-align: center;
-    margin-bottom: 5rem;
+    width: 40rem;
+    margin: auto;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.modal__delete__actions .cancel__button {
+    gap: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+    background-color: transparent;
+    border: 1px solid rgba(25, 118, 210, 0.5);
+    padding: 5px 15px;
+    border-radius: 4px;
+    font-weight: 500px;
+    font-size: medium;
+    color: #1976d2;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.modal__delete__actions .cancel__button:hover {
+    background-color: rgba(25, 118, 210, 0.04);
+    border: 1px solid #1976d2;
+    cursor: pointer;
+}
+
+.modal__delete__actions .delete__button {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    background-color: #0f61ef;
+    color: #fff;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.modal__delete__actions .delete__button:hover{
+    background-color: #0f3cef;
+}
+
+.modal__delete__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1rem;
 }

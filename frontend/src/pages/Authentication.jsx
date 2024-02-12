@@ -39,10 +39,19 @@ export async function action({ request }) {
   }
 
   const resData = await response.json();
-  console.log(resData);
   const token = resData.result.token;
 
   localStorage.setItem('currentUserToken', token);
+  localStorage.setItem(
+    'currentUser',
+    JSON.stringify({
+      id: resData.result.id,
+      email: resData.result.email,
+      name: resData.result.name,
+      token: resData.result.token,
+      userLogin: true,
+    })
+  );
 
   return redirect('/');
 }

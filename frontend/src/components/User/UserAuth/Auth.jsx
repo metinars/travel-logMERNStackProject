@@ -30,15 +30,6 @@ const Auth = () => {
             </div>
             <PasswordField />
           </div>
-          {/* <div className={classes.actions}>
-            <Link to={`?mode=${isLogin ? 'signup' : 'login'}`}>
-              {isLogin ? 'Create new user' : 'Login'}
-            </Link>
-            <button disabled={isSubmitting}>
-              {isSubmitting ? 'Submitting..' : 'Save'}
-            </button>
-          </div> */}
-
           <div className={classes.login__actions}>
             <Link to="../">Cancel</Link>
             <button className={classes.button} disabled={isSubmitting}>
