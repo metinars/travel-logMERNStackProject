@@ -42,7 +42,7 @@ const AddTravel = () => {
   const submitHandler = (event) => {
     event.preventDefault();
 
-    const token = localStorage.getItem('currentUserToken');
+    const token = JSON.parse(localStorage.getItem('currentUserToken'));
 
     const travelData = new FormData(event.target);
     const data = Object.fromEntries(travelData);

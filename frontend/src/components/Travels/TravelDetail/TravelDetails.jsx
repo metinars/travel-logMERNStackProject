@@ -16,8 +16,6 @@ const TravelDetails = ({ travel }) => {
     setIsDeleting(true);
   };
 
-  console.log(travel);
-
   const handleDelete = () => {
     submit(null, { method: 'delete' });
   };
