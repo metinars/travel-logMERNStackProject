@@ -87,7 +87,7 @@ input{
 }
 
 .containerDetail {
-    max-width: 35rem;
+    max-width: 100rem;
     margin: 0 auto;
 }
 
@@ -96,7 +96,7 @@ label {
     display: block;
     margin-bottom: 0.15rem;
     font-weight: bold;
-    font-size: 0.8rem;
+    font-size: 2rem;
     font-family: 'Quicksand', sans-serif;
     color: #414956;
 }

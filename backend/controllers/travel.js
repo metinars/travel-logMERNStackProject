@@ -24,7 +24,6 @@ const getTravelDetail = tryCatch(async (req, res) => {
 const deleteTravel = tryCatch(async (req, res) => {
   try {
     const { id } = req.params;
-    console.log(id);
     await Travel.findByIdAndDelete(id);
     res.status(200).json({
       message: `Deleting success! ${id}`,
@@ -37,9 +36,7 @@ const deleteTravel = tryCatch(async (req, res) => {
 const editTravel = tryCatch(async (req, res) => {
   try {
     const data = req.body;
-    console.log(data);
     const { id } = req.params;
-    console.log(id);
     await Travel.findByIdAndUpdate(id, data);
     res.status(200).json({
       message: 'Editing Success',
@@ -48,19 +45,6 @@ const editTravel = tryCatch(async (req, res) => {
     return res.status(500).json({ message: error.message });
   }
 });
-
-// const getTravelDetail = async (req, res, next) => {
-//   try {
-//     console.log('test');
-//     const { id } = req.params;
-//     const travel = await Travel.findById(id);
-//     res.status(200).json({
-//       travel,
-//     });
-//   } catch (error) {
-//     return res.status(500).json({ message: error.message });
-//   }
-// };
 
 module.exports = {
   createTravel,

@@ -1,11 +1,26 @@
 .edit__travel{
-    margin: 20% auto;
-    max-width: 30rem;
+    margin: 10% auto;
+    max-width: 80rem;
 }
 
 .form {
     display: flex;
     flex-direction: column;
+}
+
+.form label,
+.form input,
+.form textarea {
+    border-color: black;
+    display: block;
+    width: 100%;
+    font-size: 2rem;
+}
+
+.form input,
+.form textarea {
+    font: inherit;
+    padding: 1rem;
 }
 
 .submitAction {
@@ -17,6 +32,7 @@
 
 .submitAction button {
     cursor: pointer;
+    font-size: 3rem;
     padding: 0.5rem 1rem;
     border-radius: 4px;
     background-color: #0f61ef;

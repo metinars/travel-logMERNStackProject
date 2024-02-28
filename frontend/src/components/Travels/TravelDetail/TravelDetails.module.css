@@ -1,81 +1,129 @@
-.travel__details header {
-    width: 40rem;
-  margin: 2rem auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.main {
+    max-width: 80%;
+    margin: 10rem auto;
+    
 }
 
-.travel__details header nav {
+.image {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.image img {
+    min-width: 100%;
+    height: auto;
+    object-fit:inherit;
+}
+
+.travel__info {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.author__details {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.travel__info .author__name {
+    font-size: 1.5rem;
+}
+
+.travel__info .date {
+    border-left: 1px solid;
+    font-size: 1.5rem;
+    padding-left: 1rem;
+}
+
+.travel__actions {
+    padding-top: 0.6rem;
+}
+
+.travel__actions nav {
     display: flex;
     gap: 1rem;
 }
 
-.travel__details header button,
-.travel__details header a {
-    font: inherit;
-    cursor: pointer;
-    border: none;
-    border-radius: 4px;
-    font-weight: bold;
+.travel__actions .edit {
     text-decoration: none;
-    padding: 0.25rem;
+    font-size: 2.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 7rem;
+    height: 4rem;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #ffc107;
 }
 
-.travel__details__image{
-    max-width: 40rem;
-    height: 20rem;
-    margin: 1rem auto;
-    border-radius: 8px;
-    overflow: hidden;
+.travel__actions .edit:hover {
+    opacity: 0.7;
 }
 
-.travel__details__image img {
-    width: 40rem;
-    max-height: 20rem;
-    object-fit: scale-down;
-}
-.travel__details__content img {
-    width: 100%;
-    height: 20rem;
-    object-fit: cover;
-    margin-bottom: 2rem;
+.travel__actions .delete {
+    text-decoration: none;
+    font-size: 2.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10rem;
+    height: 4rem;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #dc3545;
 }
 
-.travel__details__content {
-    width: 40rem;
-    margin:  auto;
-    border-radius: 8px;
+.travel__actions .delete:hover {
+    opacity: 0.9;
+}
+
+.details {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 3rem;
 }
 
-.travel__details__info p{
-    font-size: 1rem;
-    margin: 0.5rem 0;
-}
-
-.travel__details time {
-    font-size: 1rem;
-    margin: 0.5rem 0;
-}
-
-.travel__details__location {
-    font-size: 1.15rem;
-    font-weight: bold;
-    margin: 0;
-}
-
-.travel__details__description {
-    width: 40rem;
-    margin: auto;
-    border-radius: 8px;
+.sidebar {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+    flex: 35%;
+    order: 1; 
+    /* border-left: 1px solid #efece2;
+    border-bottom:  1px solid #efece2; */
 }
 
+.sidebar .map__pin {
+    font-size: 5rem;
+    color: #dc3545;
+}
+
+.content {
+    flex: 65%;
+    padding-right: 1rem;
+}
+
+.box {
+    margin-bottom: 20px;
+    background-color: #f1f1f1;
+    padding: 200px 10px;
+}
+
+.author__box {
+    display: flex;
+}
+
+.travel__map {
+    padding-top: 3rem;
+}
 
 .modal__delete__actions .cancel__button {
     gap: 0.5rem;
@@ -120,4 +168,10 @@
     justify-content: flex-end;
     gap: 1rem;
     margin-top: 1rem;
+}
+
+@media (max-width: 700px) {
+    .details {
+        flex-direction: column;
+    }
 }

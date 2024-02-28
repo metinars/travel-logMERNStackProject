@@ -1,6 +1,8 @@
 import { Link, useSubmit } from 'react-router-dom';
+import Map, { FullscreenControl, Marker } from 'react-map-gl';
 import classes from './TravelDetails.module.css';
 import { useState } from 'react';
+import { FaMapPin } from 'react-icons/fa';
 
 import Modal from '../../UI/Modal';
 
@@ -14,6 +16,8 @@ const TravelDetails = ({ travel }) => {
     setIsDeleting(true);
   };
 
+  console.log(travel);
+
   const handleDelete = () => {
     submit(null, { method: 'delete' });
   };
@@ -24,8 +28,12 @@ const TravelDetails = ({ travel }) => {
     if (userData.id === travel.uId) {
       nav = (
         <nav>
-          <button onClick={handleStartDelete}>Delete</button>
-          <Link to="edit">Edit</Link>
+          <Link className={classes.edit} to="edit">
+            Edit
+          </Link>
+          <Link className={classes.delete} onClick={handleStartDelete}>
+            Delete
+          </Link>
         </nav>
       );
     }
@@ -61,34 +69,53 @@ const TravelDetails = ({ travel }) => {
         </>
       )}
 
-      <article className={classes.travel__details}>
-        <header>
-          <h1>{travel.title}</h1>
-          {nav}
-        </header>
-        <div className={classes.travel__details__image}>
+      <main className={classes.main}>
+        <div className={classes.image}>
           <img src={travel.imageUrl} alt={travel.title} />
         </div>
-        <div className={classes.travel__details__content}>
-          <div className={classes.travel__details__info}>
-            <div>
-              <p className={classes.travel__details__location}>
-                {travel.uName}
-              </p>
+        <div className={classes.travel__info}>
+          <div className={classes.author__details}>
+            <div className={classes.author__name}>
+              <p>{travel.uName}</p>
             </div>
-            {/* <p className={classes.travel__details__description}>{travel.desc}</p> */}
-          </div>
-          <div className={classes.travel__details__info}>
-            <div>
+            <div className={classes.date}>
               <time dateTime={`Todo-DateT$Todo-Time`}>{formattedDate}</time>
             </div>
-            {/* <p className={classes.travel__details__description}>{travel.desc}</p> */}
+          </div>
+          <div className={classes.travel__actions}>{nav}</div>
+        </div>
+        <div className={classes.details}>
+          <div className={classes.sidebar}>
+            <Map
+              mapboxAccessToken={import.meta.env.VITE_MAPBOX_APP_TOKEN}
+              initialViewState={{
+                longitude: travel.longitude,
+                latitude: travel.latitude,
+                zoom: 12,
+              }}
+              style={{ width: '100%', height: '100%' }}
+              mapStyle="mapbox://styles/mapbox/streets-v9"
+            >
+              <FullscreenControl />
+              <Marker longitude={travel.longitude} latitude={travel.latitude}>
+                <FaMapPin className={classes.map__pin} />
+              </Marker>
+            </Map>
+          </div>
+          <div className={classes.content}>
+            <div className={classes.container}>
+              <div className={classes.travel__content}>
+                <div>
+                  <h2>{travel.title}</h2>
+                </div>
+                <div>
+                  <p>{travel.desc}</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div className={classes.travel__details__description}>
-          <p>{travel.desc}</p>
-        </div>
-      </article>
+      </main>
     </>
   );
 };

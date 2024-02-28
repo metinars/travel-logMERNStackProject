@@ -46,10 +46,10 @@ const AddLocation = ({ style }) => {
             initialViewState={{
               longitude: longitude,
               latitude: latitude,
-              zoom: 9,
+              zoom: 12,
             }}
             onClick={handleAddClick}
-            style={{ width: '60rem', height: '350px' }}
+            style={{ width: '100rem', height: '60rem' }}
             mapStyle="mapbox://styles/mapbox/streets-v11"
           >
             <Marker

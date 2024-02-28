@@ -1,7 +1,7 @@
 /* -------------------------------------------------------------------------- */
 .container {
     margin: 3rem auto;
-    max-width: 60rem;
+    max-width: 100rem;
 }
 
 .addTravel {
@@ -14,7 +14,7 @@
 .formItems {
     overflow-y: auto;
     align-items: center;
-    padding: 16px 24px;
+    padding: 5rem 24px;
     align-items: center;
 }
 
@@ -24,25 +24,26 @@
     border-color: black;
     display: block;
     width: 100%;
+    font-size: 2rem;
 }
 
 .formItems input,
 .formItems textarea {
     font: inherit;
-    padding: 0.25rem;
+    padding: 1rem;
 }
 
 .submitAction {
     display: flex;
     justify-content: flex-end;
     gap: 1rem;
-    margin-right: 0.9rem;
-    max-width: 48rem;
+    margin-right: 2rem;
 }
 
 .submitAction button {
     cursor: pointer;
-    padding: 0.5rem 1rem;
+    font-size: 3rem;
+    padding: 0.6rem 1rem;
     border-radius: 4px;
     background-color: #0f61ef;
     color: #fff;
@@ -57,8 +58,8 @@
 .stepBtns {
     display: flex;
     flex-direction: row;
-    padding-top: 16px;
-    padding-bottom: 56px;
+    /* padding-top: 16px;
+    padding-bottom: 56px; */
     justify-content: space-around;
     align-items: flex-end;
 }
@@ -79,7 +80,7 @@
     user-select: none;
     vertical-align: middle;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 3rem;
     color: inherit;
     font-weight: bold;
     text-transform: uppercase;

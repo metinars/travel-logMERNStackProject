@@ -79,7 +79,7 @@ function ClusterMap({ travels }) {
         style={{ width: '100vw', height: '100vh' }}
         mapStyle="mapbox://styles/mapbox/streets-v9"
       >
-        <FullscreenControl />
+        <FullscreenControl style={{ marginTop: '5rem' }} />
         {points?.map((cluster) => {
           const [longitude, latitude] = cluster.geometry.coordinates;
 

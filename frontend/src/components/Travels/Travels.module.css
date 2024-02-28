@@ -4,20 +4,25 @@
     align-items: center;
     grid-template-columns: repeat(
       auto-fill,
-      minmax(var(--auto-grid-min-size, 14rem), 1fr)
+      minmax(var(--auto-grid-min-size, 30rem), 1fr)
     );
     grid-gap: var(--auto-grid-gap, 0.5rem);
     padding: 0;
     list-style-type: none;
   }
 
+  @media (max-width: 768px) {
+    .auto__grid{
+      padding: 1rem;
+    }
+  }
+
   .flow {
     margin: 2rem auto;
-    margin-top: 4rem;
-    max-width: 60rem;
+    margin-top: 7rem;
+    max-width: 80%;
   }
   
-  /* Composition */
   .team {
     --flow-space: 2em;
   }
@@ -47,35 +52,7 @@
     left: 0;
   }
   
-  /* .profile::before {
-    background: linear-gradient(
-      to top,
-      hsl(0 0% 0% / 0.79) 0%,
-      hsl(0 0% 0% / 0.787) 7.8%,
-      hsl(0 0% 0% / 0.779) 14.4%,
-      hsl(0 0% 0% / 0.765) 20.2%,
-      hsl(0 0% 0% / 0.744) 25.3%,
-      hsl(0 0% 0% / 0.717) 29.9%,
-      hsl(0 0% 0% / 0.683) 34.3%,
-      hsl(0 0% 0% / 0.641) 38.7%,
-      hsl(0 0% 0% / 0.592) 43.3%,
-      hsl(0 0% 0% / 0.534) 48.4%,
-      hsl(0 0% 0% / 0.468) 54.1%,
-      hsl(0 0% 0% / 0.393) 60.6%,
-      hsl(0 0% 0% / 0.31) 68.3%,
-      hsl(0 0% 0% / 0.216) 77.3%,
-      hsl(0 0% 0% / 0.113) 87.7%,
-      hsl(0 0% 0% / 0) 100%
-    );
-    transition: 300ms opacity linear;
-  } */
-  
   .profile::after {
-    /* background: linear-gradient(
-      45deg,
-      hsl(5 97% 63% / 0.7) 0,
-      hsl(5 97% 63% / 0) 100%
-    ); */
     opacity: 0;
     transition: 300ms opacity linear;
   }
@@ -94,7 +71,6 @@
     z-index: -1;
     object-fit: cover;
     border-radius: 3%;
-    /* filter: grayscale(1); */
     transition: filter 200ms ease, transform 250ms linear;
   }
   
@@ -104,7 +80,7 @@
   }
   
   .profile h2 {
-    font-size: 1.7rem;
+    font-size: 2rem;
     line-height: 1.2;
     font-weight: 900;
     letter-spacing: 0.03ch;
@@ -112,7 +88,7 @@
   }
   
   .profile p {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     font-weight: 500;
   }
   
