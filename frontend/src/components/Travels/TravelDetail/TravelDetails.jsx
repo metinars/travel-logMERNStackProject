@@ -1,5 +1,9 @@
 import { Link, useSubmit } from 'react-router-dom';
-import Map, { FullscreenControl, Marker } from 'react-map-gl';
+import Map, {
+  FullscreenControl,
+  Marker,
+  NavigationControl,
+} from 'react-map-gl';
 import classes from './TravelDetails.module.css';
 import { useState } from 'react';
 import { FaMapPin } from 'react-icons/fa';
@@ -89,15 +93,16 @@ const TravelDetails = ({ travel }) => {
               initialViewState={{
                 longitude: travel.longitude,
                 latitude: travel.latitude,
-                zoom: 12,
+                zoom: 10,
               }}
-              style={{ width: '100%', height: '100%' }}
+              style={{ width: '100%', height: '350px' }}
               mapStyle="mapbox://styles/mapbox/streets-v9"
             >
               <FullscreenControl />
               <Marker longitude={travel.longitude} latitude={travel.latitude}>
                 <FaMapPin className={classes.map__pin} />
               </Marker>
+              <NavigationControl position="bottom-right" />
             </Map>
           </div>
           <div className={classes.content}>
