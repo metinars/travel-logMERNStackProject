@@ -1,5 +1,5 @@
 const tryCatch = require('./utils/tryCatch');
-const Travel = require('../models/Travel');
+const Travel = require('../models/travel');
 
 const createTravel = tryCatch(async (req, res) => {
   const { id: uId, name: uName } = req.user;

@@ -12,7 +12,7 @@ const auth = require('../middleware/auth');
 router.post('/new', auth, createTravel);
 router.get('/getAll', getTravels);
 router.get('/:id', getTravelDetail);
-router.delete('/:id', deleteTravel);
-router.patch('/:id', editTravel);
+router.delete('/:id', auth, deleteTravel);
+router.patch('/:id', auth, editTravel);
 
 module.exports = router;
