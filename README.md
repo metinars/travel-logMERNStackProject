@@ -14,7 +14,7 @@ To run the project locally, follow these steps:
 
 1. Clone this repository.
    ```bash
-   git clone https://github.com/yourusername/travel-log.git
+   git clone https://github.com/metinars/travel-logMERNStackProject
    ```
 
 2. Navigate to the frontend directory.
@@ -32,7 +32,7 @@ To run the project locally, follow these steps:
    npm run dev
    ```
 
-5. Access the application at `http://localhost:3000`.
+5. Access the application at `http://localhost:8800`.
 
 ### Node.js Project (Backend)
 
@@ -43,7 +43,7 @@ To run the project locally, follow these steps:
 
 2. Create a `.env` file and specify the following environment variables:
    ```plaintext
-   PORT=3001
+   PORT=8800
    MONGODB_URI=your_mongodb_connection_string
    ```
 
@@ -57,7 +57,7 @@ To run the project locally, follow these steps:
    npm start
    ```
 
-5. The backend server will be running at `http://localhost:3001`.
+5. The backend server will be running at `http://localhost:5173`.
 
 ### MongoDB Configuration
 
