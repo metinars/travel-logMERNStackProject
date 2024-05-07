@@ -19,7 +19,7 @@ import AuthenticationPage, {
 import { action as actionLogout } from './pages/Logout';
 import { tokenLoader } from './util/auth';
 import EditTravelPage from './pages/Edittravel';
-import { action as manipulateTravelAction } from './components/EditTravel/EditTravel';
+import { action as manipulateTravelAction } from './components/EditTravel';
 
 const router = createBrowserRouter([
   {
