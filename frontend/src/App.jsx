@@ -18,7 +18,7 @@ import AuthenticationPage, {
 } from './pages/Authentication';
 import { action as actionLogout } from './pages/Logout';
 import { tokenLoader } from './util/auth';
-import EditTravelPage from './pages/Edittravel';
+import EditTravelPage from './pages/EditTravel';
 import { action as manipulateTravelAction } from './components/EditTravel/EditTravel';
 
 const router = createBrowserRouter([
